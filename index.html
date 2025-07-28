@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex - Colección de Pokémon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #f0f0f0;
+            opacity: 0.9;
+        }
+
+        .pokemon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px 0;
+        }
+
+        .pokemon-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            
+        }
+        .pokemon-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .pokemon-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #6e2121;
+        }
+
+        .pokemon-image {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            border-radius: 15px;
+            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+            padding: 10px;
+            margin: 0 auto 20px;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+       
+        .pokemon-info {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 15px;
+            
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid #b9b3b1;
+        }
+
+    
+        .stats-container {
+            display:flexbox;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid #b9b3b1;
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1> Pokédex Digital </h1>
+            <p>Descubre la información completa de tus Pokémon favoritos</p>
+        </div>
+
+        <div class="pokemon-grid">
+            <!-- Pikachu -->
+            <div class="pokemon-card">
+                <div class="pokemon-header">
+                    <h2 class="pokemon-name">Pikachu</h2>
+                        <img src="/pokemon1/picachu-removebg-preview.png" alt="Pikachu" class="pokemon-image">
+                </div>
+                <div class="pokemon-info">
+                    <div class="info-row">
+                        <span class="info-label">Número:</span>
+                        <span class="info-value">#025</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Tipo:</span>
+                        <span class="info-value">
+                            <span class="pokemon-type type-electric">Eléctrico</span>
+                        </span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Altura:</span>
+                        <span class="info-value">0.4 m</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Peso:</span>
+                        <span class="info-value">6.0 kg</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Habilidad:</span>
+                        <span class="info-value">Electricidad Estática</span>
+                    </div>
+                </div>
+                <p class="pokemon-description">
+                    Este Pokémon tiene bolsas eléctricas en sus mejillas. Cuando se enfada, libera descargas eléctricas. Es muy popular por su personalidad amigable y leal.
+                </p>
+                <div class="stats-container">
+                    <div class="stat-bar">
+                        
+                        <div class="stat-progress">
+                            <div class="stat-fill stat-hp" style="width: 35%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-bar">
+                        <div class="stat-name">Ataque: 55</div>
+                        <div class="stat-progress">
+                            <div class="stat-fill stat-attack" style="width: 55%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-bar">
+                        <div class="stat-name">Defensa: 40</div>
+                        <div class="stat-progress">
+                            <div class="stat-fill stat-defense" style="width: 40%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-bar">
+                        <div class="stat-name">Velocidad: 90</div>
+                        <div class="stat-progress">
+                            <div class="stat-fill stat-speed" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charizard -->
+            <div class="pokemon-card">
+                <div class="pokemon-header">
+                    <h2 class="pokemon-name">Charizard</h2>
+                    <img src="/pokemon1/charizar-removebg-preview.png"="Charizard" class="pokemon-image">
+                </div>
+                <div class="pokemon-info">
+                    <div class="info-row">
+                        <span class="info-label">Número:</span>
+                        <span class="info-value">#006</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Tipo:</span>
+                        <span class="info-value">
+                            <span class="pokemon-type type-fire">Fuego</span>
+                        </span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Altura:</span>
+                        <span class="info-value">1.7 m</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Peso:</span>
+                        <span class="info-value">90.5 kg</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Habilidad:</span>
+                        <span class="info-value">Mar Llamas</span>
+                    </div>
+                </div>
+                <p class="pokemon-description">
+                    Escupe fuego que es lo bastante caliente como para fundir cualquier cosa. Su fuego se vuelve más intenso cuando tiene experiencia en combate.
+                </p>
+                <div class="stats-container">
+                    <div class="stat-bar">
+           
+                        <div class="stat-progress">
+                            <div class="stat-fill stat-hp" style="width: 78%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-bar">
+                        <div class="stat-name">Ataque: 84</div>
+                        <div class="stat-progress">
+                            <div class="stat-fill stat-attack" style="width: 84%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-bar">
+                        <div class="stat-name">Defensa: 78</div>
+                        <div class="stat-progress">
+                            <div class="stat-fill stat-defense" style="width: 78%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-bar">
+                        <div class="stat-name">Velocidad: 100</div>
+                        <div class="stat-progress">
+                            <div class="stat-fill stat-speed" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charmander -->
+            <div class="pokemon-card">
+                <div class="pokemon-header">
+                    <h2 class="pokemon-name">Charmander</h2>
+                    <img src="/pokemon1/charmander-removebg-preview.png" alt="Charmander" class="pokemon-image">
+                </div>
+                <div class="pokemon-info">
+                    <div class="info-row">
+                        <span class="info-label">Número:</span>
+                        <span class="info-value">#004</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Tipo:</span>
+                        <span class="info-value">
+                            <span class="pokemon-type type-fire">Fuego</span>
+                        </span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Altura:</span>
+                        <span class="info-value">0.6 m</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Peso:</span>
+                        <span class="info-value">8.5 kg</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Habilidad:</span>
+                        <span class="info-value">Mar Llamas</span>
+                    </div>
+                </div>
+                <p class="pokemon-description">
+                    La llama de su cola indica sus emociones. Parpadea cuando está contento y arde con fuerza cuando está enfadado. Si la llama se apaga, muere.
+                </p>
+                <div class="stats-container">
+                    <div class="stat-bar">
+                      
+                        <div class="stat-progress">
+                            <div class="stat-fill stat-hp" style="width: 39%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-bar">
+                        <div class="stat-name">Ataque: 52</div>
+                        <div class="stat-progress">
+                            <div class="stat-fill stat-attack" style="width: 52%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-bar">
+                        <div class="stat-name">Defensa: 43</div>
+                        <div class="stat-progress">
+                            <div class="stat-fill stat-defense" style="width: 43%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-bar">
+                        <div class="stat-name">Velocidad: 65</div>
+                        <div class="stat-progress">
+                            <div class="stat-fill stat-speed" style="width: 65%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bulbasaur -->
+            <div class="pokemon-card">
+                <div class="pokemon-header">
+                    <h2 class="pokemon-name">Bulbasaur</h2>
+                    <img src="/pokemon1/bulbasaur-removebg-preview.png" alt="Bulbasaur" class="pokemon-image">
+                </div>
+                <div class="pokemon-info">
+                    <div class="info-row">
+                        <span class="info-label">Número:</span>
+                        <span class="info-value">#001</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Tipo:</span>
+                        <span class="info-value">
+                            <span class="pokemon-type type-grass">Planta</span>
+                            <span class="pokemon-type type-poison">Veneno</span>
+                        </span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Altura:</span>
+                        <span class="info-value">0.7 m</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Peso:</span>
+                        <span class="info-value">6.9 kg</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Habilidad:</span>
+                        <span class="info-value">Espesura</span>
+                    </div>
+                </div>
+                <p class="pokemon-description">
+                    Puede pasar días sin comer gracias a que el bulbo de su lomo almacena energía. Cuando el bulbo crece mucho, pierde la capacidad de ponerse en pie.
+                </p>
+                <div class="stats-container">
+                    <div class="stat-bar">
+       
+                        <div class="stat-progress">
+                            <div class="stat-fill stat-hp" style="width: 45%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-bar">
+                        <div class="stat-name">Ataque: 49</div>
+                        <div class="stat-progress">
+                            <div class="stat-fill stat-attack" style="width: 49%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-bar">
+                        <div class="stat-name">Defensa: 49</div>
+                        <div class="stat-progress">
+                            <div class="stat-fill stat-defense" style="width: 49%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-bar">
+                        <div class="stat-name">Velocidad: 45</div>
+                        <div class="stat-progress">
+                            <div class="stat-fill stat-speed" style="width: 45%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mewtwo -->
+            <div class="pokemon-card">
+                <div class="pokemon-header">
+                    <h2 class="pokemon-name">Mewtwo</h2>
+                    <img src="/pokemon1/mewtwo.png" alt="Mewtwo" class="pokemon-image">
+                </div>
+                <div class="pokemon-info">
+                    <div class="info-row">
+                        <span class="info-label">Número:</span>
+                        <span class="info-value">#150</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Tipo:</span>
+                        <span class="info-value">
+                            <span class="pokemon-type type-psychic">Psíquico</span>
+                        </span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Altura:</span>
+                        <span class="info-value">2.0 m</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Peso:</span>
+                        <span class="info-value">122.0 kg</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Habilidad:</span>
+                        <span class="info-value">Presión</span>
+                    </div>
+                </div>
+                <p class="pokemon-description">
+                    Fue creado por un científico tras años de horribles experimentos de ingeniería genética. Su corazón salvaje solo piensa en luchar.
+                </p>
+                <div class="stats-container">
+                    <div class="stat-bar">
+         
+                        <div class="stat-progress">
+                            <div class="stat-fill stat-hp" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-bar">
+                        <div class="stat-name">Ataque: 110</div>
+                        <div class="stat-progress">
+                            <div class="stat-fill stat-attack" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-bar">
+                        <div class="stat-name">Defensa: 90</div>
+                        <div class="stat-progress">
+                            <div class="stat-fill stat-defense" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-bar">
+                        <div class="stat-name">Velocidad: 130</div>
+                        <div class="stat-progress">
+                            <div class="stat-fill stat-speed" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
+
